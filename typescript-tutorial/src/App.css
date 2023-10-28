@@ -1,0 +1,141 @@
+.App {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  /* width: 100vw;*/
+  height: 100%; 
+  background-color: rgb(134, 134, 235);
+}
+.heading {
+  text-transform: uppercase;
+  font-size: 40px;
+  margin: 30px 0;
+  color: white;
+}
+
+.input {
+  display: flex;
+  width: 90%;
+  position: relative;
+  align-items: center;
+}
+
+.input_box {
+  width: 100%;
+  border-radius: 50px;
+  padding: 20px 30px;
+  font-size: 25px;
+  border: none;
+  transition: 0.2s;
+  box-shadow: inset 0 0 5px black;
+}
+
+.input_box:focus {
+  box-shadow: 0 0 10px 1000px rgba(0, 0, 0, 0.5);
+  outline: none;
+}
+.input_submit {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  right: 10px;
+  border: none;
+  font-size: 15px;
+  background-color: #2f74c0;
+  color: white;
+  transition: 0.2s all;
+  box-shadow: 0 0 10px black;
+}
+
+.input_submit:hover {
+  background-color: #388ae2;
+  cursor: pointer;
+}
+
+.input_submit:active {
+  transform: scale(0.8);
+  box-shadow: 0 0 5px black;
+}
+
+.imageBlock {
+  width: 25%;
+  margin: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px black;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.imageBlock img {
+  border-radius: 15px;
+}
+
+.collection {
+  display: flex;
+  flex-wrap: wrap;
+  width: 85;
+  justify-content: center;
+
+}
+
+
+.main {
+  width: 95%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.title {
+  height: 40px;
+  background-color: aliceblue;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.loader img{
+  width: 100px;
+  border-radius: 50px;  
+}
+
+.loader {
+  width: 10%;
+  background-color: #fff;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  border-radius: 50px;
+    margin: 50px; 
+}
+
+.pagination-block {
+  margin-top: 25px;
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination-block div {
+  width: 50px;
+  height: 50px;
+  background-color: aqua;
+  font-size: 20px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.pagination-block div:hover {
+  background-color: bisque;
+}
+
+.pagination-block div:active {
+  transform: scale(0.8);
+  box-shadow: 0 0 5px black;
+}
