@@ -7,11 +7,11 @@ When user types something to the Search input and clicks "Search" button, a load
 The search term typed into the Search input is saved in the local storage when user clicks on "Search" button (check it by closing the tab and open the app in the new one - the initial call should contain previously entered search term) - 15 points
 Application is wrapped with ErrorBoundary, which logs error to a console and shows a fallback UI. There should be a button to throw an error - 10 points
 Penalties:
-TypeScript isn't used: -95 points
-Usage of any: -20 points per each
-Usage of ts-ignore: -20 points per each
-Direct DOM manipulations inside the React components: -50 points per each
-React hooks are used to get access to either state, or to the component lifecycle: -70 points
-Presence of code-smells (God-object, chunks of duplicate code), commented code sections: -10 points per each
-Usage of Redux or other state management libraries: -100 points
-Usage of component libraries, e.g. Material UI, Ant Design: -100 points
+1) TypeScript isn't used: -95 points
+2) Usage of any: -20 points per each
+3) Usage of ts-ignore: -20 points per each
+4) Direct DOM manipulations inside the React components: -50 points per each
+5) React hooks are used to get access to either state, or to the component lifecycle: -70 points
+6) Presence of code-smells (God-object, chunks of duplicate code), commented code sections: -10 points per each
+7) Usage of Redux or other state management libraries: -100 points
+8) Usage of component libraries, e.g. Material UI, Ant Design: -100 points
