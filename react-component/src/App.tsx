@@ -3,6 +3,7 @@ import './App.css'
 import InputComponent from "./components/InputComponent";
 import ItemBlocks from "./components/ItemBlocks";
 import Loader from "./components/Loader";
+import Error from "./components/Error";
 
 const KEY = "5f17aaf7";
 const URL = "http://www.omdbapi.com/";
@@ -14,18 +15,28 @@ const App: React.FC = () => {
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [errorMessage, setErrorMessage] =useState("");
 
   useEffect(() => {
     if (searchTitle.length >= 3) {
       setIsLoading(true)
+      setIsError(false);
       fetch(`${URL}?s=${searchTitle}&apikey=${KEY}&page=${page}`)
         .then((res) => res.json())
         .then((data) => {
-          setMovies(data.Search);
+          console.log(data)
+          if (data.Response === 'False') {
+            setIsError(true);
+            setErrorMessage(data.Error);
+          }
+          if (data.Response) {            
+            setMovies(data.Search);
+          }
           setIsLoading(false)
         });
     }
-  }, [searchTitle, search, page]);
+  }, [searchTitle]);
 
   return (
     <div className="App">
@@ -36,11 +47,9 @@ const App: React.FC = () => {
         setSearchTitle={setSearchTitle}
       />
       <div className="main">
-        {isLoading ? (
-          <Loader />
-        ) : (
-          <ItemBlocks movies={movies} setPage={setPage} />
-        )}
+        {isLoading && <Loader />}
+        {isError && <Error errorMessage={errorMessage} />}  
+        <ItemBlocks movies={movies} isLoading={isLoading} setPage={setPage} />
       </div>
     </div>
   );
